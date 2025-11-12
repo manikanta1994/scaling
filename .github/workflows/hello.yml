@@ -34,3 +34,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps: 
+      - name: checkout respository
+        uses: actions/checkout@v4
+      - name: Test stage
+        run: |
+          echo "running tests"
+          echo "all tests passed"
+  
